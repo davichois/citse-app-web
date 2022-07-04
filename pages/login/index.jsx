@@ -12,11 +12,11 @@ const LoginPage = () => {
 
   return (
     <>
-      <div>
+      <div className="fixed">
         <Logo variant="secandary">CITSE</Logo>
       </div>
 
-      <div className="flex flex-col items-center h-full w-full justify-center gap-5">
+      <div className="flex flex-col items-center min-h-screen h-auto w-full justify-center gap-5 fixed">
         <Typography
           text={"INICIAR SESIÓN"}
           fontSize={"24px"}
@@ -45,7 +45,7 @@ const LoginPage = () => {
           />
 
           <Button variant="filled" type="submit">
-            Iniciar Sesión
+           <Typography text={"Iniciar Sesión"} fontSize={"14px"} fontWeight={"400"}/>
           </Button>
         </form>
 

@@ -1,10 +1,11 @@
-import { CardActivities } from "../../../components";
-import { PageGeneralLayout } from "../../../layouts/PageGeneralLayout";
+import { CardActivities, ItemCreation } from "../../../../components";
+import { PageGeneralLayout } from "../../../../layouts/PageGeneralLayout";
 
-const homePage = () => {
+const programPage = () => {
   return (
     <>
       <PageGeneralLayout>
+        <ItemCreation route={""} />
         <div className="flex gap-3 flex-col md:flex-row md:flex-wrap md:justify-between justify-start overflow-scroll h-5/6">
           {/* Content */}
           <CardActivities />
@@ -16,4 +17,4 @@ const homePage = () => {
   );
 };
 
-export default homePage;
+export default programPage;

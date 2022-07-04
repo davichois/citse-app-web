@@ -27,18 +27,42 @@ export const NavBarHome = () => {
         <Logo>CITSE</Logo>
       </div>
       <div className="flex space-x-3 lg:space-x-9">
-        <ItemNavBar Icon={CollectionIcon} title={"Proyecto"} />
-        <ItemNavBar Icon={CalendarIcon} title={"Programa"} />
+        <ItemNavBar
+          Icon={CollectionIcon}
+          title={"Proyecto"}
+          route={"/home/admin/proyects"}
+        />
+        <ItemNavBar
+          Icon={CalendarIcon}
+          title={"Programa"}
+          route={"/home/admin/programs"}
+        />
         <div className="md:hidden">
           <button onClick={handleMenu}>
-            <ItemNavBar Icon={PlusIcon} title={""} />
+            <ItemNavBar Icon={PlusIcon} title={""} route={""} />
           </button>
         </div>
         <div className="hidden md:flex space-x-7 lg:space-x-9">
-          <ItemNavBar Icon={ClipboardListIcon} title={"Talleres"} />
-          <ItemNavBar Icon={UserGroupIcon} title={"Roles"} />
-          <ItemNavBar Icon={UserCircleIcon} title={"Usuario"} />
-          <ItemNavBar Icon={OfficeBuildingIcon} title={"Organizaciones"} />
+          <ItemNavBar
+            Icon={ClipboardListIcon}
+            title={"Talleres"}
+            route={"/home/admin/workshops"}
+          />
+          <ItemNavBar
+            Icon={UserGroupIcon}
+            title={"Roles"}
+            route={"/home/admin/roles"}
+          />
+          <ItemNavBar
+            Icon={UserCircleIcon}
+            title={"Usuario"}
+            route={"/home/admin/users"}
+          />
+          <ItemNavBar
+            Icon={OfficeBuildingIcon}
+            title={"Organizaciones"}
+            route={"/home/admin/organizations"}
+          />
         </div>
       </div>
       <div>
@@ -47,10 +71,26 @@ export const NavBarHome = () => {
 
       {menuActive && (
         <div className="md:hidden absolute w-full h-auto p-5  bg-gradient-to-tr from-neutral-100 to-neutral-100 border-2 border-gray-200 rounded-md top-12 flex flex-col justify-center items-center space-y-4 duration-700">
-          <ItemNavBar Icon={ClipboardListIcon} title={"Talleres"} />
-          <ItemNavBar Icon={UserGroupIcon} title={"Roles"} />
-          <ItemNavBar Icon={UserCircleIcon} title={"Usuario"} />
-          <ItemNavBar Icon={OfficeBuildingIcon} title={"Organizaciones"} />
+          <ItemNavBar
+            Icon={ClipboardListIcon}
+            title={"Talleres"}
+            route={"/home/admin/workshops"}
+          />
+          <ItemNavBar
+            Icon={UserGroupIcon}
+            title={"Roles"}
+            route={"/home/admin/roles"}
+          />
+          <ItemNavBar
+            Icon={UserCircleIcon}
+            title={"Usuario"}
+            route={"/home/admin/users"}
+          />
+          <ItemNavBar
+            Icon={OfficeBuildingIcon}
+            title={"Organizaciones"}
+            route={"/home/admin/organizations"}
+          />
         </div>
       )}
     </div>

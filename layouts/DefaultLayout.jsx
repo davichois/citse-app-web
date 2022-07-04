@@ -15,7 +15,7 @@ export const DefaultLayout = ({ children, title }) => {
           content="citse, upeu, hook-up, quinta elena, departamento mision"
         />
       </Head>
-      <main className="overflow-hidden min-h-screen h-screen base w-full p-5 md:p-8 bg-gradient-to-br from-neutral-100 to-neutral-100">
+      <main className="overflow-hidden min-h-screen h-auto base w-full p-5 md:p-8 bg-gradient-to-br from-neutral-100 to-neutral-100">
         {children}
       </main>
     </>

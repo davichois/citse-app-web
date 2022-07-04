@@ -8,9 +8,13 @@ export const CardActivities = () => {
         {/* Header Card */}
         <HeaderCard />
         {/* Descripcion Card */}
-        <Typography text={"Proyecto social la cual tiene como objectivo ayudar a las personas de bajo recursos economicos en tarapoto en el caserio Quinta Elena ."} fontSize={"10px"} variant={"secondary"} />
-        {/* Involucrados Proyect */}
-
+        <Typography
+          text={
+            "Proyecto social la cual tiene como objectivo ayudar a las personas de bajo recursos economicos en tarapoto en el caserio Quinta Elena ."
+          }
+          fontSize={"10px"}
+          variant={"secondary"}
+        />
       </div>
     </>
   );

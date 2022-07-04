@@ -1,7 +1,7 @@
 import tw, { styled, css } from "twin.macro";
 
 export const ButtonStyled = styled.button(({ variant }) => [
-  tw`px-5  box-border h-12 w-full max-w-xs rounded-sm text-sm font-normal uppercase`,
+  tw`box-border h-auto py-2 w-full max-w-xs rounded-sm uppercase`,
 
   variant == "filled" && tw`bg-yellow-500 text-green-900 border-green-900 border-2`,
 
