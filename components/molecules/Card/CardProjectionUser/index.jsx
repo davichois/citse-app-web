@@ -6,7 +6,7 @@ import {
   ClipboardListIcon,
 } from "@heroicons/react/outline";
 
-export const CardActivitiesUser = () => {
+export const CardProjectionUser = () => {
   return (
     <>
       <div className="w-full h-fit  bg-transparent border-2 border-green-900 rounded-sm md:w-96 px-2 py-3">
@@ -21,7 +21,7 @@ export const CardActivitiesUser = () => {
           variant={"secondary"}
         />
         <div className="flex justify-between pt-4">
-          <ItemActionCard Icon={ViewBoardsIcon} title={"Cronograma"} />
+          <ItemActionCard Icon={ViewBoardsIcon} title={"itinerario"} />
           <ItemActionCard Icon={DocumentRemoveIcon} title={"Quiz"} />
           <ItemActionCard
             Icon={ClipboardListIcon}

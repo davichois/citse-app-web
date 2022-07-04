@@ -1,5 +1,5 @@
 const workshopId = () => {
-    return <div>programId</div>;
+    return <div>workshopId</div>;
   };
   
   export default workshopId;

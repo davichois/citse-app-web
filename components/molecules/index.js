@@ -1,4 +1,5 @@
-export * from "./Card/CardActivities";
-export * from "./Card/CardActivitiesUser";
+export * from "./Card/CardProjection";
+export * from "./Card/CardProjectionUser";
 export * from "./NavBar/NavBarHomeUser";
 export * from "./NavBar/NavBarHome";
+export * from "./Card/CardActivitiUser";

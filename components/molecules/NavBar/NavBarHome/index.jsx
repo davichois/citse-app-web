@@ -30,12 +30,12 @@ export const NavBarHome = () => {
         <ItemNavBar
           Icon={CollectionIcon}
           title={"Proyecto"}
-          route={"/home/admin/proyects"}
+          route={"/home/proyects"}
         />
         <ItemNavBar
           Icon={CalendarIcon}
           title={"Programa"}
-          route={"/home/admin/programs"}
+          route={"/home/programs"}
         />
         <div className="md:hidden">
           <button onClick={handleMenu}>
@@ -46,22 +46,22 @@ export const NavBarHome = () => {
           <ItemNavBar
             Icon={ClipboardListIcon}
             title={"Talleres"}
-            route={"/home/admin/workshops"}
+            route={"/home/workshops"}
           />
           <ItemNavBar
             Icon={UserGroupIcon}
             title={"Roles"}
-            route={"/home/admin/roles"}
+            route={"/home/roles"}
           />
           <ItemNavBar
             Icon={UserCircleIcon}
             title={"Usuario"}
-            route={"/home/admin/users"}
+            route={"/home/users"}
           />
           <ItemNavBar
             Icon={OfficeBuildingIcon}
             title={"Organizaciones"}
-            route={"/home/admin/organizations"}
+            route={"/home/organizations"}
           />
         </div>
       </div>
@@ -74,22 +74,22 @@ export const NavBarHome = () => {
           <ItemNavBar
             Icon={ClipboardListIcon}
             title={"Talleres"}
-            route={"/home/admin/workshops"}
+            route={"/home/workshops"}
           />
           <ItemNavBar
             Icon={UserGroupIcon}
             title={"Roles"}
-            route={"/home/admin/roles"}
+            route={"/home/roles"}
           />
           <ItemNavBar
             Icon={UserCircleIcon}
             title={"Usuario"}
-            route={"/home/admin/users"}
+            route={"/home/users"}
           />
           <ItemNavBar
             Icon={OfficeBuildingIcon}
             title={"Organizaciones"}
-            route={"/home/admin/organizations"}
+            route={"/home/organizations"}
           />
         </div>
       )}

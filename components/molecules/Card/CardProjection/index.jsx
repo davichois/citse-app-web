@@ -1,7 +1,7 @@
 import { Typography } from "../../../../contents";
 import { HeaderCard } from "../../../atoms";
 
-export const CardActivities = () => {
+export const CardProjection = () => {
   return (
     <>
       <div className="w-full h-fit  bg-transparent border-2 border-green-900 rounded-sm md:w-96 px-2 py-3">
