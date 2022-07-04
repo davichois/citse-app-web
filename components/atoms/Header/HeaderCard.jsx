@@ -3,7 +3,7 @@ import { DotsCircleHorizontalIcon } from "@heroicons/react/outline";
 import { Typography } from "../../../contents";
 import { ItemNavBar } from "../Item";
 
-export const HeaderCard = () => {
+export const HeaderCard = ({ type = "super-user" }) => {
   return (
     <div className="flex justify-between">
       <Typography
@@ -12,7 +12,11 @@ export const HeaderCard = () => {
         fontWeight={"500"}
         variant={"primary"}
       />
-      <ItemNavBar Icon={DotsCircleHorizontalIcon} />
+      {type == "super-user" ? (
+        <ItemNavBar Icon={DotsCircleHorizontalIcon} route="" />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

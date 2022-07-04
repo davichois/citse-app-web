@@ -5,7 +5,12 @@ const homeUser = () => {
   return (
     <>
       <PageGeneralLayout>
-        <CardActivitiesUser />
+        <div className="flex gap-3 flex-col md:flex-row md:flex-wrap md:justify-between justify-start overflow-scroll h-5/6">
+          <CardActivitiesUser />
+          <CardActivitiesUser />
+          <CardActivitiesUser />
+          <CardActivitiesUser />
+        </div>
       </PageGeneralLayout>
     </>
   );

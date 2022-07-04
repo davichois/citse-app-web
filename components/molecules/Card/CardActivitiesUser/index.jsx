@@ -11,7 +11,7 @@ export const CardActivitiesUser = () => {
     <>
       <div className="w-full h-fit  bg-transparent border-2 border-green-900 rounded-sm md:w-96 px-2 py-3">
         {/* Header Card */}
-        <HeaderCard />
+        <HeaderCard type="user" />
         {/* Descripcion Card */}
         <Typography
           text={
