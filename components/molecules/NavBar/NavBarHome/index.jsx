@@ -70,7 +70,7 @@ export const NavBarHome = () => {
       </div>
 
       {menuActive && (
-        <div className="md:hidden absolute w-full h-auto p-5  bg-gradient-to-tr from-neutral-100 to-neutral-100 border-2 border-gray-200 rounded-md top-12 flex flex-col justify-center items-center space-y-4 duration-700">
+        <div className="md:hidden absolute w-full h-auto p-5  bg-gradient-to-tr from-neutral-100 to-neutral-100 border-2 border-gray-200 rounded-md top-12 flex flex-col justify-center items-center space-y-4 duration-700 z-10">
           <ItemNavBar
             Icon={ClipboardListIcon}
             title={"Talleres"}

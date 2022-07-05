@@ -1,1 +1,1 @@
-export * from "./api";
+export { default as citseApi }  from "./api";

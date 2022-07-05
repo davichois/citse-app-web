@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Typography } from "../../../contents";
 
-export const ItemNavBar = ({ Icon, title, route = "/home/proyects" }) => {
+export const ItemNavBar = ({ Icon, title, route = "/" }) => {
   return (
     <>
       <Link href={route}>
