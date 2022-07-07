@@ -9,7 +9,7 @@ export const HeaderProjection = ({ proyection, origin }) => {
     <>
       <div className="space-y-3 pt-5 lg:max-w-xl">
         <h3 className="font-normal text-lg md:text-lg lg:text-xl text-green-900">
-          Proyecto {proyection.nombre}
+          {`${origin[0].toUpperCase() + origin.substring(1)} ${proyection.nombre}`}
         </h3>
         <p className="font-light capitalize text-xs md:text-base lg:text-sm">
           {proyection.descripcion}.

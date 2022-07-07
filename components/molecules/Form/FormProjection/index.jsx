@@ -50,6 +50,7 @@ export const FormProjection = ({ origin, state }) => {
           {state && (
             <div className="w-full">
               <Input origin="select" value={idPadre} onChange={setIdPadre}>
+                <option value={0}>{`Seleccionar ${origin}`}</option>
                 {data == undefined
                   ? ""
                   : data.map((res) => (

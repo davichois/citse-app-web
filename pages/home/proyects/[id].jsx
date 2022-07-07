@@ -1,3 +1,4 @@
+import { HeaderProjection } from "../../../components";
 import { PageGeneralLayout } from "../../../layouts/PageGeneralLayout";
 import { getInfoEndPoint } from "../../../utils";
 
@@ -5,7 +6,8 @@ const proyectId = ({ proyecto }) => {
   return (
     <>
       <PageGeneralLayout>
-       
+        <HeaderProjection proyection={proyecto} origin={"proyecto"} />
+        {/* Asignacion de entidades */}
       </PageGeneralLayout>
     </>
   );

@@ -1,7 +1,15 @@
+import { HeaderProjection } from "../../../components";
+import { PageGeneralLayout } from "../../../layouts/PageGeneralLayout";
 import { getInfoEndPoint } from "../../../utils";
 
 const programId = ({ programa }) => {
-  return <div>{programa.nombre}</div>;
+  return (
+    <>
+      <PageGeneralLayout>
+        <HeaderProjection proyection={programa} origin={"programa"} />
+      </PageGeneralLayout>
+    </>
+  );
 };
 
 export const getStaticPaths = async (ctx) => {

@@ -1,6 +1,6 @@
 import tw, { css , styled} from "twin.macro";
 
-export const TypographyStyled = styled.p(
+export const TypographyStyled = styled.text(
   ({ variant, fontSize, fontWeight }) => [
     css`
       font-size: ${fontSize};

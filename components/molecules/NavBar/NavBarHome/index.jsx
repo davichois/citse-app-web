@@ -8,6 +8,7 @@ import {
   PlusIcon,
   UserCircleIcon,
   UserGroupIcon,
+  UserIcon,
 } from "@heroicons/react/outline";
 
 import { ItemNavBar, Avatar } from "../../../index";
@@ -50,9 +51,9 @@ export const NavBarHome = () => {
             route={"/home/workshops"}
           />
           <ItemNavBar
-            Icon={UserCircleIcon}
-            title={"Usuario"}
-            route={"/home/users"}
+            Icon={UserIcon}
+            title={"personas"}
+            route={"/home/peoples"}
           />
           <ItemNavBar
             Icon={OfficeBuildingIcon}
@@ -73,9 +74,9 @@ export const NavBarHome = () => {
             route={"/home/workshops"}
           />
           <ItemNavBar
-            Icon={UserCircleIcon}
-            title={"Usuario"}
-            route={"/home/users"}
+            Icon={UserIcon}
+            title={"Personas"}
+            route={"/home/peoples"}
           />
           <ItemNavBar
             Icon={OfficeBuildingIcon}
