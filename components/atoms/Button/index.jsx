@@ -1,9 +1,14 @@
-import { ButtonStyled } from "./ButtonStyled";
+import { ButtonFormStyled, ButtonStyled } from "./ButtonStyled";
 
-export const Button = ({ children, variant = "filled" }) => {
+export const Button = ({ children, variant = "filled", origin = "normal" }) => {
   return (
     <>
-      <ButtonStyled {...{ variant }}>{children}</ButtonStyled>
+      {origin == "normal" && (
+        <ButtonStyled {...{ variant }}>{children}</ButtonStyled>
+      )}
+      {origin == "form" && (
+        <ButtonFormStyled {...{ variant }}>{children}</ButtonFormStyled>
+      )}
     </>
   );
 };

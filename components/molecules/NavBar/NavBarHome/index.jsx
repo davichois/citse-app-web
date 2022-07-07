@@ -49,11 +49,6 @@ export const NavBarHome = () => {
             route={"/home/workshops"}
           />
           <ItemNavBar
-            Icon={UserGroupIcon}
-            title={"Roles"}
-            route={"/home/roles"}
-          />
-          <ItemNavBar
             Icon={UserCircleIcon}
             title={"Usuario"}
             route={"/home/users"}
@@ -75,11 +70,6 @@ export const NavBarHome = () => {
             Icon={ClipboardListIcon}
             title={"Talleres"}
             route={"/home/workshops"}
-          />
-          <ItemNavBar
-            Icon={UserGroupIcon}
-            title={"Roles"}
-            route={"/home/roles"}
           />
           <ItemNavBar
             Icon={UserCircleIcon}

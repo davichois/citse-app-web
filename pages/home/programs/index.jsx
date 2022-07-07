@@ -6,7 +6,7 @@ const programPage = ({ programas }) => {
   return (
     <>
       <PageGeneralLayout>
-        <ItemCreation route={""} />
+        <ItemCreation route={"/home/programs/creation"} />
         <div className="flex gap-3 flex-col md:flex-row md:flex-wrap lg:justify-start md:justify-between justify-start overflow-scroll h-5/6">
           {/* Content */}
           {programas.map((programa) => (

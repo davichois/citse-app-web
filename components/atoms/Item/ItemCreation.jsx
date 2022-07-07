@@ -6,7 +6,7 @@ export const ItemCreation = ({ title = "Nuevo", route = "" }) => {
   return (
     <div className="mb-5 mt-1">
       <Link href={route}>
-        <a className="flex items-center space-y-1 space-x-2 md:flex-row md:space-x-2 md:items-end cursor-pointer hover:text-gray-500">
+        <a className="flex w-fit items-center space-y-1 space-x-2 md:flex-row md:space-x-2 md:items-end cursor-pointer hover:text-gray-500">
           <Typography
             text={title}
             fontSize={"16px"}
