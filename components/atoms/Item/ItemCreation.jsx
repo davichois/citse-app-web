@@ -1,8 +1,9 @@
 import Link from "next/link";
+
 import { PlusCircleIcon } from "@heroicons/react/outline";
 import { Typography } from "../../../contents";
 
-export const ItemCreation = ({ title = "Nuevo", route = "" }) => {
+export const ItemCreation = ({ title = "Nuevo", route = "#" }) => {
   return (
     <div className="mb-5 mt-1">
       <Link href={route}>

@@ -1,7 +1,7 @@
 import { TypographyStyled } from "./TypographyStyled";
 
 export const Typography = ({
-  text,
+  text = "",
   variant = "primary",
   fontSize = "12px",
   fontWeight = "100",

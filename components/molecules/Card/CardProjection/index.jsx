@@ -38,11 +38,20 @@ export const CardProjection = ({
         />
         {type == "user" ? (
           <div className="flex justify-between pt-4">
-            <ItemActionCard Icon={ViewBoardsIcon} title={"itinerario"} />
-            <ItemActionCard Icon={DocumentRemoveIcon} title={"Quiz"} />
+            <ItemActionCard
+              Icon={ViewBoardsIcon}
+              title={"itinerario"}
+              route="#"
+            />
+            <ItemActionCard
+              Icon={DocumentRemoveIcon}
+              title={"Quiz"}
+              route="#"
+            />
             <ItemActionCard
               Icon={ClipboardListIcon}
               title={"Lista Comunitarios"}
+              route="#"
             />
           </div>
         ) : (

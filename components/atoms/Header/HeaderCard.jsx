@@ -26,7 +26,7 @@ export const HeaderCard = ({
       />
       {type == "super-user" ? (
         <div className="text-red-400" onClick={handleEliminated}>
-          <ItemNavBar Icon={TrashIcon} title={""} route={""} />
+          <ItemNavBar Icon={TrashIcon} title={""} route={"#"} />
         </div>
       ) : (
         ""

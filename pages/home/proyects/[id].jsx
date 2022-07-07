@@ -1,7 +1,14 @@
+import { PageGeneralLayout } from "../../../layouts/PageGeneralLayout";
 import { getInfoEndPoint } from "../../../utils";
 
 const proyectId = ({ proyecto }) => {
-  return <div>{proyecto.nombre}</div>;
+  return (
+    <>
+      <PageGeneralLayout>
+       
+      </PageGeneralLayout>
+    </>
+  );
 };
 
 export const getStaticPaths = async (ctx) => {

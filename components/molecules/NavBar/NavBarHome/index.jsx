@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   CalendarIcon,
@@ -16,9 +16,10 @@ import { Logo } from "../../../../contents";
 export const NavBarHome = () => {
   const [menuActive, setMenuActive] = useState(false);
 
+  useEffect(() => setMenuActive(false), []);
+
   const handleMenu = () => {
     setMenuActive(!menuActive);
-    console.log(menuActive);
   };
 
   return (
@@ -39,7 +40,7 @@ export const NavBarHome = () => {
         />
         <div className="md:hidden">
           <button onClick={handleMenu}>
-            <ItemNavBar Icon={PlusIcon} title={""} route={""} />
+            <ItemNavBar Icon={PlusIcon} title={"."} route={"#"} />
           </button>
         </div>
         <div className="hidden md:flex space-x-7 lg:space-x-9">
