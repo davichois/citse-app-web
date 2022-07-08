@@ -1,5 +1,7 @@
-// next.config.js
-module.exports = {
-  // ... rest of the configuration.
+const nextConfig = {
+  reactStrictMode: true,
+  images: {},
   output: "standalone",
 };
+
+module.exports = nextConfig;
