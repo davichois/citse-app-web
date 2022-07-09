@@ -1,59 +1,85 @@
+import Link from "next/link";
 import { ItemCreation } from "../../../components";
 import { PageGeneralLayout } from "../../../layouts/PageGeneralLayout";
+import { getInfoEndPoint } from "../../../utils";
 
-const usersPage = () => {
+const usersPage = ({ personas }) => {
+  const cabecera = [
+    "nombre",
+    "apellidos",
+    "dni",
+    " fecha nacimiento",
+    "option",
+  ];
+
   return (
     <>
       <PageGeneralLayout>
         <ItemCreation route={"/home/peoples/creation"} />
-
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-500">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50">
               <tr>
-                <th scope="col" className="px-6 py-3">
-                  Product name
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Color
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Category
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Price
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  <span className="sr-only">Edit</span>
-                </th>
+                {cabecera.map((r, i) => (
+                  <th key={i} scope="col" className="px-6 py-3">
+                    {r}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
-              <tr className="bg-white border-b ">
-                <th
-                  scope="row"
-                  className="px-6 py-4 font-medium text-gray-900  whitespace-nowrap"
+              {personas.map((p) => (
+                <tr
+                  className="bg-white border-b "
+                  key={p.idPersona}
+                  onClick={() => {
+                    console.log(p.idPersona);
+                  }}
                 >
-                  Apple MacBook Pro 17
-                </th>
-                <td className="px-6 py-4">Sliver</td>
-                <td className="px-6 py-4">Laptop</td>
-                <td className="px-6 py-4">$2999</td>
-                <td className="px-6 py-4 text-right">
-                  <a
-                    href="#"
-                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >
-                    Edit
-                  </a>
-                </td>
-              </tr>
+                  <td className="px-6 py-4">{p.noPersona}</td>
+                  <td className="px-6 py-4">
+                    {p.apPaterno} {p.apMaterno}
+                  </td>
+                  <td className="px-6 py-4">{p.nuIndentificacion}</td>
+                  <td className="px-6 py-4">{p.feNacimiento}</td>
+                  <td className="px-6 py-4 text-right flex space-x-5">
+                    <p className="font-medium text-red-400  hover:underline">
+                      {" "}
+                      Delete
+                    </p>
+                    <Link href={"#"}>
+                      <a className="font-medium text-blue-600  hover:underline">
+                        Edit
+                      </a>
+                    </Link>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
       </PageGeneralLayout>
     </>
   );
+};
+
+export const getServerSideProps = async (ctx) => {
+  const data = await getInfoEndPoint({ path: "/maestra/persona/" });
+
+  if (!data) {
+    return {
+      redirect: {
+        destination: "/404",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {
+      personas: data,
+    },
+  };
 };
 
 export default usersPage;

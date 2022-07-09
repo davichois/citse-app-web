@@ -5,4 +5,3 @@ export * from "./Card/CardActivitiUser";
 export * from "./Form/FormProjection";
 export * from "./Form/FormOrganization";
 export * from "./Form/FormPerson";
-export * from "./Table/TableGeneralInfo";

@@ -19,6 +19,9 @@ export const CardProjection = ({
   const router = useRouter();
 
   const onNavigationCard = () => {
+    if (type == "user") {
+      return null;
+    }
     router.push(`/home/${origin}/${id}`);
   };
 
@@ -41,7 +44,7 @@ export const CardProjection = ({
             <ItemActionCard
               Icon={ViewBoardsIcon}
               title={"itinerario"}
-              route="#"
+              route={`/itinerary/${id}`}
             />
             <ItemActionCard
               Icon={DocumentRemoveIcon}

@@ -52,7 +52,7 @@ export const NavBarHome = () => {
           />
           <ItemNavBar
             Icon={UserIcon}
-            title={"personas"}
+            title={"Personas"}
             route={"/home/peoples"}
           />
           <ItemNavBar
