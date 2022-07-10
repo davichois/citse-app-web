@@ -6,12 +6,13 @@ import { ItemNavBar } from "../Item";
 
 export const HeaderCard = ({
   type = "super-user",
+  origin,
   title = "NO TITULO",
   id = 0,
 }) => {
   const handleEliminated = async () => {
     if (id != 0) {
-      return await deleteEndPoint({ path: "/negocio/proyecto/", id: id });
+      return await deleteEndPoint({ path: `/negocio/${origin}/`, id: id });
     }
     return;
   };

@@ -21,6 +21,7 @@ const proyectPage = ({ proyectos }) => {
                   descripcion={proyecto.descripcion}
                   id={proyecto.id}
                   origin={"proyects"}
+                  callOrigin={"proyecto"}
                 />
               </div>
             ) : (

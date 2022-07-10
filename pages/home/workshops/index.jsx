@@ -17,6 +17,7 @@ const workShopPage = ({ talleres }) => {
               descripcion={taller.descripcion}
               id={taller.id}
               origin={"workshops"}
+              callOrigin={"taller"}
             />
           ))}
         </div>

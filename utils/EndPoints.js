@@ -16,7 +16,10 @@ export const getInfoEndPoint = async ({ path = "", id = 0 }) => {
 
 export const postEndPoint = async ({ path = "", body }) => {
   try {
-    const res = await citseApi.post(path, body);
+    const res = await citseApi.post(path, body, {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    });
     return res;
   } catch (error) {
     return null;

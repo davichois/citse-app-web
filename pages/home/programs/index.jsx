@@ -17,6 +17,7 @@ const programPage = ({ programas }) => {
               descripcion={programa.descripcion}
               id={programa.id}
               origin={"programs"}
+              callOrigin={"programa"}
             />
           ))}
         </div>

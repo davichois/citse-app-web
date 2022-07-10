@@ -14,7 +14,8 @@ export const CardProjection = ({
   title,
   descripcion = "No descripcion",
   id = 0,
-  origin = "",
+  origin,
+  callOrigin,
 }) => {
   const router = useRouter();
 
@@ -32,7 +33,7 @@ export const CardProjection = ({
         onClick={onNavigationCard}
       >
         {/* Header Card */}
-        <HeaderCard title={title} type={type} id={id} />
+        <HeaderCard title={title} type={type} id={id} origin={callOrigin} />
         {/* Descripcion Card */}
         <Typography
           text={descripcion}

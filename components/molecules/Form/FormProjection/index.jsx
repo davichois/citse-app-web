@@ -28,8 +28,31 @@ export const FormProjection = ({ origin, state, callOrigin }) => {
   };
 
   const submitFormForParent = async () => {
-    let data = { nombre, descripcion, objetivo, idPadre, inicio };
-    return await postEndPoint({ path: `/negocio/${callOrigin}/`, body: data });
+    if (origin == "proyecto") {
+      let data = {
+        nombre,
+        descripcion,
+        objetivo,
+        proyecto: { id: idPadre },
+        inicio,
+      };
+      return await postEndPoint({
+        path: `/negocio/${callOrigin}/`,
+        body: data,
+      });
+    } else {
+      let data = {
+        nombre,
+        descripcion,
+        objetivo,
+        programa: { id: idPadre },
+        inicio,
+      };
+      return await postEndPoint({
+        path: `/negocio/${callOrigin}/`,
+        body: data,
+      });
+    }
   };
 
   return (
