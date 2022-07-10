@@ -8,7 +8,7 @@ const creationPage = () => {
       <PageGeneralLayout>
         <div className="space-y-10 pt-5 md:text-lg lg:text-xl">
           <h3 className="font-medium ">Creacion de Programa</h3>
-          <FormProjection origin="proyecto" state={true} />
+          <FormProjection origin="proyecto" state={true} callOrigin={"programa"}/>
         </div>
       </PageGeneralLayout>
     </>

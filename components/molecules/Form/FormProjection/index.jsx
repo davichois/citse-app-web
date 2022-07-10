@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Input, Typography } from "../../../../contents";
-import { getInfoEndPoint } from "../../../../utils";
+import { getInfoEndPoint, postEndPoint } from "../../../../utils";
 import { Button } from "../../../atoms";
 
-export const FormProjection = ({ origin, state }) => {
+export const FormProjection = ({ origin, state, callOrigin }) => {
   const [nombre, setNombre] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [objetivo, setobjetivo] = useState("");
+  const [inicio, setInicio] = useState("");
   const [idPadre, setIdPadre] = useState(0);
 
   const [data, setData] = useState();
@@ -18,10 +19,33 @@ export const FormProjection = ({ origin, state }) => {
     };
   }, [origin]);
 
+  // post call
+
+  const submitFormNotParent = async () => {
+    let data = { nombre, descripcion, objetivo, inicio };
+    console.log(data);
+    return await postEndPoint({ path: `/negocio/${callOrigin}/`, body: data });
+  };
+
+  const submitFormForParent = async () => {
+    let data = { nombre, descripcion, objetivo, idPadre, inicio };
+    return await postEndPoint({ path: `/negocio/${callOrigin}/`, body: data });
+  };
+
   return (
     <>
       <div className="flex justify-between space-x-5">
-        <form className="flex flex-col items-center space-y-8 w-full md:max-w-lg md:space-y-12">
+        <form
+          className="flex flex-col items-center space-y-8 w-full md:max-w-lg md:space-y-12"
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (callOrigin == "proyecto") {
+              submitFormNotParent();
+            } else {
+              submitFormForParent();
+            }
+          }}
+        >
           <div className="w-full">
             <Input
               origin="form"
@@ -44,6 +68,14 @@ export const FormProjection = ({ origin, state }) => {
               placeholder="Objectivo"
               value={objetivo}
               onChange={setobjetivo}
+            />
+          </div>
+          <div className="w-full">
+            <Input
+              origin="form"
+              type="date"
+              value={inicio}
+              onChange={setInicio}
             />
           </div>
 

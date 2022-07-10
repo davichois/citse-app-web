@@ -1,9 +1,6 @@
 import { citseApi } from "../api";
 
-export const getInfoEndPoint = async ({
-  path = "/negocio/proyecto/",
-  id = 0,
-}) => {
+export const getInfoEndPoint = async ({ path = "", id = 0 }) => {
   try {
     if (id == 0) {
       const { data } = await citseApi.get(`${path}`);
@@ -17,10 +14,16 @@ export const getInfoEndPoint = async ({
   }
 };
 
-export const deleteEndPoint = async ({
-  path = "/negocio/proyecto/",
-  id = 0,
-}) => {
+export const postEndPoint = async ({ path = "", body }) => {
+  try {
+    const res = await citseApi.post(path, body);
+    return res;
+  } catch (error) {
+    return null;
+  }
+};
+
+export const deleteEndPoint = async ({ path = "", id = 0 }) => {
   try {
     if (id != 0) {
       const consult = await citseApi.delete(`${path}${id}`);
