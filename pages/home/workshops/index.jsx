@@ -26,8 +26,8 @@ const WorkShopPage = ({ talleres }) => {
   );
 };
 
-export const getStaticProps = async (ctx) => {
-  const data = await getInfoEndPoint({ path: "/negocio/taller/" });
+export const getServerSideProps = async (ctx) => {
+  const data = await getInfoEndPoint({ path: `/negocio/taller/` });
 
   if (!data) {
     return {
@@ -42,7 +42,6 @@ export const getStaticProps = async (ctx) => {
     props: {
       talleres: data,
     },
-    revalidate: 60, // 60 * 1 - 1min
   };
 };
 

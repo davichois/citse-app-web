@@ -13,16 +13,29 @@ const ProyectId = ({ proyecto }) => {
   );
 };
 
-export const getStaticPaths = async (ctx) => {
-  const data = await getInfoEndPoint({ path: "/negocio/proyecto/" });
+// export const getStaticPaths = async (ctx) => {
+//   const data = await getInfoEndPoint({ path: "/negocio/proyecto/" });
 
-  return {
-    paths: data.map((proyecto) => ({ params: { id: proyecto.id.toString() } })),
-    fallback: "blocking",
-  };
-};
+//   return {
+//     paths: data.map((proyecto) => ({ params: { id: proyecto.id.toString() } })),
+//     fallback: "blocking",
+//   };
+// };
 
-export const getStaticProps = async ({ params }) => {
+// export const getStaticProps = async ({ params }) => {
+//   const { id } = params;
+
+//   const data = await getInfoEndPoint({ path: `/negocio/proyecto/${id}` });
+
+//   return {
+//     props: {
+//       proyecto: data,
+//     },
+//     revalidate: 600,
+//   };
+// };
+
+export const getServerSideProps = async ({ params }) => {
   const { id } = params;
 
   const data = await getInfoEndPoint({ path: `/negocio/proyecto/${id}` });
@@ -31,8 +44,8 @@ export const getStaticProps = async ({ params }) => {
     props: {
       proyecto: data,
     },
-    revalidate: 600,
   };
 };
+
 
 export default ProyectId;

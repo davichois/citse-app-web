@@ -14,16 +14,7 @@ const WorkshopId = ({ taller }) => {
   );
 };
 
-export const getStaticPaths = async (ctx) => {
-  const data = await getInfoEndPoint({ path: "/negocio/taller/" });
-
-  return {
-    paths: data.map((taller) => ({ params: { id: taller.id.toString() } })),
-    fallback: "blocking",
-  };
-};
-
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
   const { id } = params;
 
   const data = await getInfoEndPoint({ path: `/negocio/taller/${id}` });
@@ -32,7 +23,6 @@ export const getStaticProps = async ({ params }) => {
     props: {
       taller: data,
     },
-    revalidate: 600,
   };
 };
 

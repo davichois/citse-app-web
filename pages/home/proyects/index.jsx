@@ -40,8 +40,8 @@ const ProyectPage = ({ proyectos }) => {
   );
 };
 
-export const getStaticProps = async (ctx) => {
-  const data = await getInfoEndPoint({ path: "/negocio/proyecto/" });
+export const getServerSideProps = async (ctx) => {
+  const data = await getInfoEndPoint({ path: `/negocio/proyecto/` });
 
   if (!data) {
     return {
@@ -56,7 +56,6 @@ export const getStaticProps = async (ctx) => {
     props: {
       proyectos: data,
     },
-    revalidate: 60, // 60 * 1 - 1min
   };
 };
 
