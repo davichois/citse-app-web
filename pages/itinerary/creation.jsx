@@ -1,4 +1,4 @@
-const itineraryCreationPage = () => {
+const ItineraryCreationPage = () => {
   return (
     <>
       <div>itineraryCreationPage</div>
@@ -6,4 +6,4 @@ const itineraryCreationPage = () => {
   );
 };
 
-export default itineraryCreationPage;
+export default ItineraryCreationPage;

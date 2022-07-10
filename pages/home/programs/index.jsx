@@ -2,7 +2,7 @@ import { CardProjection, ItemCreation } from "../../../components";
 import { PageGeneralLayout } from "../../../layouts/PageGeneralLayout";
 import { getInfoEndPoint } from "../../../utils";
 
-const programPage = ({ programas }) => {
+const ProgramPage = ({ programas }) => {
   return (
     <>
       <PageGeneralLayout>
@@ -26,7 +26,7 @@ const programPage = ({ programas }) => {
   );
 };
 
-export const getStaticProps = async (ctx) => {
+export const getServerSideProps = async (ctx) => {
   const data = await getInfoEndPoint({ path: "/negocio/programa/" });
 
   if (!data) {
@@ -42,8 +42,7 @@ export const getStaticProps = async (ctx) => {
     props: {
       programas: data,
     },
-    revalidate: 60, // 60 * 1 - 1min
   };
-};
+}
 
-export default programPage;
+export default ProgramPage;

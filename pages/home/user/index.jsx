@@ -1,7 +1,7 @@
 import { CardProjection } from "../../../components";
 import { PageGeneralLayout } from "../../../layouts/PageGeneralLayout";
 
-const homeUser = () => {
+const HomeUser = () => {
   return (
     <>
       <PageGeneralLayout>
@@ -13,4 +13,4 @@ const homeUser = () => {
   );
 };
 
-export default homeUser;
+export default HomeUser;

@@ -2,7 +2,7 @@ import { CardProjection, ItemCreation } from "../../../components";
 import { PageGeneralLayout } from "../../../layouts/PageGeneralLayout";
 import { getInfoEndPoint } from "../../../utils";
 
-const workShopPage = ({ talleres }) => {
+const WorkShopPage = ({ talleres }) => {
   return (
     <>
       <PageGeneralLayout>
@@ -46,4 +46,4 @@ export const getStaticProps = async (ctx) => {
   };
 };
 
-export default workShopPage;
+export default WorkShopPage;

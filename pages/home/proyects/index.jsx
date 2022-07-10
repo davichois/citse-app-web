@@ -1,10 +1,8 @@
-import ErrorPage from "next/error";
-
 import { CardProjection, ItemCreation } from "../../../components";
 import { PageGeneralLayout } from "../../../layouts/PageGeneralLayout";
 import { getInfoEndPoint } from "../../../utils";
 
-const proyectPage = ({ proyectos }) => {
+const ProyectPage = ({ proyectos }) => {
   return (
     <>
       <PageGeneralLayout>
@@ -32,6 +30,7 @@ const proyectPage = ({ proyectos }) => {
                 descripcion={proyecto.descripcion}
                 id={proyecto.id}
                 origin={"proyects"}
+                callOrigin={"proyecto"}
               />
             )
           )}
@@ -61,4 +60,4 @@ export const getStaticProps = async (ctx) => {
   };
 };
 
-export default proyectPage;
+export default ProyectPage;

@@ -1,7 +1,7 @@
 import { FormProjection } from "../../../components";
 import { PageGeneralLayout } from "../../../layouts/PageGeneralLayout";
 
-const creationPage = () => {
+const CreationPage = () => {
   return (
     <>
       <PageGeneralLayout>
@@ -14,4 +14,4 @@ const creationPage = () => {
   );
 };
 
-export default creationPage;
+export default CreationPage;

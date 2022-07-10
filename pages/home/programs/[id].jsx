@@ -1,8 +1,9 @@
+import { useRouter } from "next/router";
 import { HeaderProjection } from "../../../components";
 import { PageGeneralLayout } from "../../../layouts/PageGeneralLayout";
 import { getInfoEndPoint } from "../../../utils";
 
-const programId = ({ programa }) => {
+const ProgramId = ({ programa }) => {
   return (
     <>
       <PageGeneralLayout>
@@ -12,16 +13,7 @@ const programId = ({ programa }) => {
   );
 };
 
-export const getStaticPaths = async (ctx) => {
-  const data = await getInfoEndPoint({ path: "/negocio/programa/" });
-
-  return {
-    paths: data.map((programa) => ({ params: { id: programa.id.toString() } })),
-    fallback: "blocking",
-  };
-};
-
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
   const { id } = params;
 
   const data = await getInfoEndPoint({ path: `/negocio/programa/${id}` });
@@ -30,8 +22,7 @@ export const getStaticProps = async ({ params }) => {
     props: {
       programa: data,
     },
-    revalidate: 600,
   };
 };
 
-export default programId;
+export default ProgramId;

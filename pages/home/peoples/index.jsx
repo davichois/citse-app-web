@@ -3,12 +3,12 @@ import { ItemCreation } from "../../../components";
 import { PageGeneralLayout } from "../../../layouts/PageGeneralLayout";
 import { getInfoEndPoint } from "../../../utils";
 
-const usersPage = ({ personas }) => {
+const UsersPage = ({ personas }) => {
   const cabecera = [
     "nombre",
     "apellidos",
     "dni",
-    " fecha nacimiento",
+    "fecha nacimiento",
     "option",
   ];
 
@@ -82,4 +82,4 @@ export const getServerSideProps = async (ctx) => {
   };
 };
 
-export default usersPage;
+export default UsersPage;

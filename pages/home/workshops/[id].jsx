@@ -2,7 +2,7 @@ import { HeaderProjection } from "../../../components";
 import { PageGeneralLayout } from "../../../layouts/PageGeneralLayout";
 import { getInfoEndPoint } from "../../../utils";
 
-const workshopId = ({ taller }) => {
+const WorkshopId = ({ taller }) => {
   return (
     <>
       <PageGeneralLayout>
@@ -36,4 +36,4 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-export default workshopId;
+export default WorkshopId;

@@ -2,7 +2,7 @@ import { CardActivitiUser } from "../../components";
 import { Typography } from "../../contents";
 import { PageGeneralLayout } from "../../layouts/PageGeneralLayout";
 
-const itineraryPage = () => {
+const ItineraryPage = () => {
   return (
     <>
       <PageGeneralLayout>
@@ -26,4 +26,4 @@ const itineraryPage = () => {
   );
 };
 
-export default itineraryPage;
+export default ItineraryPage;
