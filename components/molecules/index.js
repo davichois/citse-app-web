@@ -5,3 +5,5 @@ export * from "./Card/CardActivitiUser";
 export * from "./Form/FormProjection";
 export * from "./Form/FormOrganization";
 export * from "./Form/FormPerson";
+export * from "./Form/FormAsigmentOrganization";
+export * from "./Form/FormCreationItinerary";

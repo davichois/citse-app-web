@@ -23,7 +23,6 @@ export const FormProjection = ({ origin, state, callOrigin }) => {
 
   const submitFormNotParent = async () => {
     let data = { nombre, descripcion, objetivo, inicio };
-    console.log(data);
     return await postEndPoint({ path: `/negocio/${callOrigin}/`, body: data });
   };
 

@@ -1,4 +1,4 @@
-import { HeaderProjection } from "../../../components";
+import { FormCreationItinerary, HeaderProjection } from "../../../components";
 import { PageGeneralLayout } from "../../../layouts/PageGeneralLayout";
 import { getInfoEndPoint } from "../../../utils";
 
@@ -9,6 +9,7 @@ const WorkshopId = ({ taller }) => {
         <HeaderProjection proyection={taller} origin={"taller"} />
         {/* Asignacion de cuestionario o creacion */}
         {/* Creacion de cronograma del taller */}
+        <FormCreationItinerary />
       </PageGeneralLayout>
     </>
   );

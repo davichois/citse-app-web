@@ -16,7 +16,7 @@ const LoginPage = () => {
         <Logo variant="secandary">CITSE</Logo>
       </div>
 
-      <div className="flex flex-col items-center min-h-screen h-auto w-full justify-center gap-5 fixed">
+      <div className="flex flex-col items-center min-h-screen h-auto w-full justify-center gap-5">
         <Typography
           text={"INICIAR SESIÓN"}
           fontSize={"24px"}

@@ -27,7 +27,7 @@ const ProgramPage = ({ programas }) => {
 };
 
 export const getServerSideProps = async (ctx) => {
-  const data = await getInfoEndPoint({ path: "/negocio/programa/" });
+  const data = await getInfoEndPoint({ path: "/negocio/programa/?esPrograma=true" });
 
   if (!data) {
     return {
