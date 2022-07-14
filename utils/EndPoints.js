@@ -38,3 +38,24 @@ export const deleteEndPoint = async ({ path = "", id = 0 }) => {
     return null;
   }
 };
+
+// Auth
+
+const username = "frontendApp";
+const password = "123456";
+
+const token = Buffer.from(`${username}:${password}`, "utf8").toString("base64");
+
+export const postTokenGenerator = async ({ path = "", body }) => {
+  try {
+    const res = await citseApi.post(path, body, {
+      headers: {
+        Authorization: `Basic ${token}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+    });
+    return res;
+  } catch (error) {
+    return "data";
+  }
+};

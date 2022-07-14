@@ -3,22 +3,23 @@ import { PencilAltIcon } from "@heroicons/react/outline";
 import { ItemActionCard } from "../../../components";
 
 export const HeaderProjection = ({ proyection, origin }) => {
-
-    
+  console.log(proyection);
   return (
     <>
       <div className="space-y-3 pt-5 lg:max-w-xl">
         <h3 className="font-normal text-lg md:text-lg lg:text-xl text-green-900">
-          {`${origin[0].toUpperCase() + origin.substring(1)} ${proyection.nombre}`}
+          {`${origin[0].toUpperCase() + origin.substring(1)} ${
+            proyection?.nombre
+          }`}
         </h3>
         <p className="font-light capitalize text-xs md:text-base lg:text-sm">
-          {proyection.descripcion}.
+          {proyection?.descripcion}.
         </p>
         <p className="font-extralight capitalize text-xs md:text-base lg:text-sm">
-          Objetivo : {proyection.objetivo}.
+          Objetivo : {proyection?.objetivo}.
         </p>
         <div className="lg:w-fit pt-5">
-          <ItemActionCard Icon={PencilAltIcon} title="Editar"/>
+          <ItemActionCard Icon={PencilAltIcon} title="Editar" />
         </div>
       </div>
     </>

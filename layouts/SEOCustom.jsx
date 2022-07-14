@@ -1,6 +1,7 @@
 import Head from "next/head";
+import { Typography } from "../contents";
 
-export const DefaultLayout = ({ children, title }) => {
+export const SEOCustom = ({ title, children }) => {
   return (
     <>
       <Head>
@@ -15,9 +16,15 @@ export const DefaultLayout = ({ children, title }) => {
           content="citse, upeu, hook-up, quinta elena, departamento mision"
         />
       </Head>
-      <main className="overflow-hidden min-h-screen h-auto base w-full p-5 md:p-6 bg-gradient-to-br from-neutral-100 to-neutral-100 text-black">
-        {children}
-      </main>
+      <main>{children}</main>
+      <footer className="flex justify-end mt-12 mb-3 md:hidden">
+        <Typography
+          text={"© CITSE 2021 / HOOK-UP"}
+          fontSize={"11px"}
+          fontWeight={"500"}
+          variant={"secondary"}
+        />
+      </footer>
     </>
   );
 };

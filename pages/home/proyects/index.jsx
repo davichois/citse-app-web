@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { CardProjection, ItemCreation } from "../../../components";
 import { PageGeneralLayout } from "../../../layouts/PageGeneralLayout";
 import { getInfoEndPoint } from "../../../utils";
 
 const ProyectPage = ({ proyectos }) => {
+
   return (
     <>
       <PageGeneralLayout>
@@ -43,14 +45,14 @@ const ProyectPage = ({ proyectos }) => {
 export const getServerSideProps = async (ctx) => {
   const data = await getInfoEndPoint({ path: `/negocio/proyecto/` });
 
-  if (!data) {
-    return {
-      redirect: {
-        destination: "/404",
-        permanent: false,
-      },
-    };
-  }
+  // if (!data) {
+  //   return {
+  //     redirect: {
+  //       destination: "/404",
+  //       permanent: false,
+  //     },
+  //   };
+  // }
 
   return {
     props: {

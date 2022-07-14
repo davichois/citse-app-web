@@ -1,13 +1,37 @@
 import { useState } from "react";
 import { Button } from "../../components/atoms";
 import { Logo, Input, Typography } from "../../contents";
+import { postTokenGenerator } from "../../utils";
+
+import qs from "querystring";
+import { useRouter } from "next/router";
+import { TokenService } from "../../helpers/oauth";
 
 const LoginPage = () => {
+  let router = useRouter();
   const [indentificacion, setIndentificacion] = useState("");
   const [contraseña, setContraseña] = useState("");
 
-  const submitForm = () => {
-    console.log(indentificacion, contraseña);
+  const submitForm = async () => {
+    let info = qs.stringify({
+      username: indentificacion,
+      password: contraseña,
+      grant_type: "password",
+    });
+
+    const { data } = await postTokenGenerator({
+      path: "/security/oauth/token",
+      body: info,
+    });
+
+    if (!data) {
+      return;
+    } else {
+      
+      window.localStorage.setItem('token', data.access_token)
+
+      router.push("/home/proyects");
+    }
   };
 
   return (
@@ -45,7 +69,11 @@ const LoginPage = () => {
           />
 
           <Button variant="filled" type="submit">
-           <Typography text={"Iniciar Sesión"} fontSize={"14px"} fontWeight={"400"}/>
+            <Typography
+              text={"Iniciar Sesión"}
+              fontSize={"14px"}
+              fontWeight={"400"}
+            />
           </Button>
         </form>
 
