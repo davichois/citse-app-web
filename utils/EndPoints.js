@@ -33,7 +33,7 @@ export const postEndPoint = async ({ path = "", body }) => {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJDb3JuZWpvIFZpbGxhbnVldmEiLCJlc3RhZG8iOnRydWUsIm51bWVybyI6IjU4OTYzODkiLCJ1c2VyX25hbWUiOiI1ODk2Mzg5Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY1NzgyMjQzNiwibm9tYnJlIjoiR2xvcmlhIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9ET0NFTlRFIl0sImp0aSI6IkNHZ1hVM21Pc3hHMW9tY3ZmVlZFTEdfNi1LMCIsImNsaWVudF9pZCI6ImZyb250ZW5kQXBwIn0.rr10yiWUIkt0sBzexW40Ga-IxxYfDK91_fPerRexh98",
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGVsbGlkb3MiOiJDb3JuZWpvIFZpbGxhbnVldmEiLCJlc3RhZG8iOnRydWUsIm51bWVybyI6IjU4OTYzODkiLCJ1c2VyX25hbWUiOiI1ODk2Mzg5Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY1Nzg2NDA4Niwibm9tYnJlIjoiR2xvcmlhIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9ET0NFTlRFIl0sImp0aSI6IlRTYU9SazQ1a1ZMdlF5N2Q4YVBvYkgtbVBSSSIsImNsaWVudF9pZCI6ImZyb250ZW5kQXBwIn0.A4f5fSr4eLo0sXPXaBeInvkCWQ5e99GZ8rbX9D9CkjA",
       },
     });
     return res;
