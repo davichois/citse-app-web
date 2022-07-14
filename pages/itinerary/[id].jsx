@@ -1,8 +1,9 @@
 import { CardActivitiUser } from "../../components";
 import { Typography } from "../../contents";
 import { PageGeneralLayout } from "../../layouts/PageGeneralLayout";
+import { getInfoEndPoint } from "../../utils";
 
-const ItineraryPage = () => {
+const ItineraryPage = ({ talleres }) => {
   return (
     <>
       <PageGeneralLayout>
@@ -14,16 +15,34 @@ const ItineraryPage = () => {
               fontWeight={"400"}
             />
           </div>
-          <CardActivitiUser />
-          <CardActivitiUser />
-          <CardActivitiUser />
-          <CardActivitiUser />
-          <CardActivitiUser />
-          <CardActivitiUser />
+          {talleres != undefined
+            ? talleres.map((taller) => (
+                <CardActivitiUser
+                  key={taller.id}
+                  id={taller.id}
+                  actividad={taller.actividad.noTipo}
+                  user={`${taller.personaPrograma.persona.noPersona} ${persona.personaPrograma.persona.apPaterno} ${persona.personaPrograma.persona.apMaterno}`}
+                />
+              ))
+            : ""}
         </div>
       </PageGeneralLayout>
     </>
   );
+};
+
+export const getServerSideProps = async ({ params }) => {
+  const { id } = params;
+
+  const data = await getInfoEndPoint({
+    path: `/participante/PPTaller/taller/${id}`,
+  });
+
+  return {
+    props: {
+      talleres: data,
+    },
+  };
 };
 
 export default ItineraryPage;

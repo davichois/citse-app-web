@@ -5,7 +5,6 @@ import { postTokenGenerator } from "../../utils";
 
 import qs from "querystring";
 import { useRouter } from "next/router";
-import { TokenService } from "../../helpers/oauth";
 
 const LoginPage = () => {
   let router = useRouter();

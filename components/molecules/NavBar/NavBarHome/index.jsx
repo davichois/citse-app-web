@@ -55,11 +55,6 @@ export const NavBarHome = () => {
             title={"Personas"}
             route={"/home/peoples"}
           />
-          <ItemNavBar
-            Icon={OfficeBuildingIcon}
-            title={"Organizaciones"}
-            route={"/home/organizations"}
-          />
         </div>
       </div>
       <div>
@@ -77,11 +72,6 @@ export const NavBarHome = () => {
             Icon={UserIcon}
             title={"Personas"}
             route={"/home/peoples"}
-          />
-          <ItemNavBar
-            Icon={OfficeBuildingIcon}
-            title={"Organizaciones"}
-            route={"/home/organizations"}
           />
         </div>
       )}

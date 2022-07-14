@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 import { NavBarHome, NavBarHomeUser } from "../components";
 import { Typography } from "../contents";
 
 export const PageGeneralLayout = ({ children }) => {
   const [superUser, setSuperUser] = useState(true);
+
+  const route = useRouter();
+
+  useEffect(() => {
+    if (route.pathname == "/home/user" || route.pathname == "/itinerary/[id]") {
+      setSuperUser(false);
+    }
+  }, [route]);
 
   return (
     <>

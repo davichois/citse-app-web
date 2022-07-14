@@ -35,11 +35,13 @@ export const CardProjection = ({
         {/* Header Card */}
         <HeaderCard title={title} type={type} id={id} origin={callOrigin} />
         {/* Descripcion Card */}
-        <Typography
-          text={descripcion}
-          fontSize={"10px"}
-          variant={"secondary"}
-        />
+        <div className="h-16 max-h-12 overflow-scroll">
+          <Typography
+            text={descripcion}
+            fontSize={"10px"}
+            variant={"secondary"}
+          />
+        </div>
         {type == "user" ? (
           <div className="flex justify-between pt-4">
             <ItemActionCard
