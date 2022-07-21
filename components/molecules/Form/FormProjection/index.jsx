@@ -34,6 +34,7 @@ export const FormProjection = ({ origin, state, callOrigin }) => {
         objetivo,
         proyecto: { id: idPadre },
         inicio,
+        estado: false,
       };
       return await postEndPoint({
         path: `/negocio/${callOrigin}/`,
@@ -46,6 +47,7 @@ export const FormProjection = ({ origin, state, callOrigin }) => {
         objetivo,
         programa: { id: idPadre },
         inicio,
+        estado: false,
       };
       return await postEndPoint({
         path: `/negocio/${callOrigin}/`,

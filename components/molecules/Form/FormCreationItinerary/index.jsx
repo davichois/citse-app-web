@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Input, Typography } from "../../../../contents";
@@ -19,20 +20,20 @@ export const FormCreationItinerary = () => {
 
   useEffect(() => {
     return async () => {
-      const ppd = await getInfoEndPoint({
-        path: `/negocio/personaPrograma/`,
-      });
-      setPersonaProgramaData(ppd);
+      const ppd = await axios.get(
+        `http://20.197.181.20:8090/api/negocio/personaPrograma/`
+      );
+      setPersonaProgramaData(ppd.data);
 
-      const ap = await getInfoEndPoint({
-        path: `/tipo/familia/5`,
-      });
-      setActividadesData(ap);
+      const ap = await axios.get(
+        `http://20.197.181.20:8090/api/tipo/familia/5`
+      );
+      setActividadesData(ap.data);
 
-      const pa = await getInfoEndPoint({
-        path: `/participante/PPTaller/taller/${id}`,
-      });
-      setPersonaActividadData(pa);
+      const pa = await axios.get(
+        `http://20.197.181.20:8090/api/participante/PPTaller/taller/${id}`
+      );
+      setPersonaActividadData(pa.data);
 
       setReaload(false);
 

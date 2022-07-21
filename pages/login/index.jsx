@@ -26,8 +26,7 @@ const LoginPage = () => {
     if (!data) {
       return;
     } else {
-      
-      window.localStorage.setItem('token', data.access_token)
+      window.localStorage.setItem("token", data.access_token);
 
       router.push("/home/proyects");
     }

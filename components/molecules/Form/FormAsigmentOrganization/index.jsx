@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { Input, Typography } from "../../../../contents";
 import { getInfoEndPoint, postEndPoint } from "../../../../utils";
@@ -9,8 +10,8 @@ export const FormAsigmentOrganization = ({ proyection }) => {
 
   useEffect(() => {
     return async () => {
-      const response = await getInfoEndPoint({ path: `/entidad/entidad/` });
-      setData(response);
+      const response = await axios.get('http://20.197.181.20:8090/api/entidad/entidad/');
+      setData(response.data);
     };
   }, []);
 
@@ -19,16 +20,16 @@ export const FormAsigmentOrganization = ({ proyection }) => {
       return;
     }
 
-    let data = {
+    let formi = {
       entidad,
       esEntidadProyecto: true,
       proyecto: { id: proyection.id },
     };
 
-    console.log(data);
+    console.log(formi);
     return await postEndPoint({
       path: `/negocio/entidadProyecto/`,
-      body: data,
+      body: formi,
     });
   };
 
@@ -51,9 +52,7 @@ export const FormAsigmentOrganization = ({ proyection }) => {
             onChange={setEntidad}
           >
             <option value={0}>{`Seleccionar entidad`}</option>
-            {data == undefined
-              ? ""
-              : data.map((res) => (
+            {data && data.map((res) => (
                   <option key={res.id} value={res.id}>
                     {res.nombre + " - " + res.alias}
                   </option>
